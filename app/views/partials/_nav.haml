@@ -1,0 +1,17 @@
+%header.mdl-layout__header.mdl-layout__header--scroll
+  .mdl-layout__header-row.white-text
+    %span.mdl-layout-title=link_to "Cyberdreams",root_path,class:"white-text",style:"text-decoration:none;"
+    .mdl-layout-spacer
+    %nav.mdl-navigation
+      -if user_signed_in?
+        =link_to "My connections", friendships_path, class:"white-text right-space"
+        =link_to current_user.username, current_user, class:"white-text right-space"
+        =link_to "Sign out", destroy_user_session_path, method: :delete, class:"white-text"
+
+.mdl-layout__drawer
+  %span.mdl-layout-title Cyberdreams
+  %nav.mdl-navigation
+    %a.mdl-navigation__link{:href => ""} Link
+    %a.mdl-navigation__link{:href => ""} Link
+    %a.mdl-navigation__link{:href => ""} Link
+    %a.mdl-navigation__link{:href => ""} Link

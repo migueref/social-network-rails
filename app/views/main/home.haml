@@ -1,0 +1,16 @@
+.top-space
+  .row.center-xs
+    =grid xs:8,md:10 do
+      .row
+        =grid lg:2, sm:3,xs:10 do
+          %ul.remove-bullet-points.text-left
+            %li=link_to "Explorar","#"
+            %li=link_to "Sugerencias","#"
+        =grid xs:10, class:"col-sm" do
+          .white.large-padding
+            =render "posts/form"
+          #posts
+            .data
+              =render @posts
+            #pagination
+              =will_paginate @posts

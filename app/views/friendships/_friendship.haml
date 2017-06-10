@@ -1,0 +1,8 @@
+.row.middle-xs
+  =grid xs:2,class:"text-left" do
+    =circle_img friendship.user_view.avatar.url(:thumb),50
+
+  =grid xs:7,class:"text-left" do
+    =friendship.user_view.username
+  =grid xs:3 do
+    =friendship.status_or_buttons

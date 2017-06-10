@@ -1,0 +1,15 @@
+.row.center-xs
+  =grid xs:10,md:8 do
+    .white.large-padding
+      .border-bottom.padding-bottom
+        %p.text-left Follow request
+        =render @pending_friendships
+      .top-space.border-bottom.padding-bottom
+        %p.text-left My followers
+        =render @accepted_friendships
+      .top-space.border-bottom.padding-bottom
+        %p.text-left My pending requests:
+        =render @pending_requests
+      .top-space
+        %p.text-left My accepted requests:
+        =render @accepted_requests
