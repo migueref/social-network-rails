@@ -9,5 +9,3 @@ App.post = App.cable.subscriptions.create "PostChannel",
     # Called when there's incoming data on the websocket for this channel
     if data.action == "new_post"
       $("#posts .data").prepend(data.message)
-  echo: ()->
-    @perform "echo",{hola: "mundo"}

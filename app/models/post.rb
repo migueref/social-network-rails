@@ -24,11 +24,11 @@ class Post < ApplicationRecord
       data  = {message: to_html,action:"new_post"}
 
       self.user.get_friend_ids.each do |friend_id|
-        ActionCable.server.broadcast "demo",data
+        ActionCable.server.broadcast "posts_#{friend_id}",data
       end
 
       self.user.get_user_ids.each do |friend_id|
-        ActionCable.server.broadcast "demo",data
+        ActionCable.server.broadcast "posts_#{friend_id}",data
       end
     end
     def to_html
